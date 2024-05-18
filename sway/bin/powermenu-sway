@@ -1,0 +1,16 @@
+#!/bin/bash
+
+choice=$(printf "Logout\nReboot\nShutdown" | rofi -dmenu -i -p "Power Menu")
+
+case "$choice" in
+    Logout) 
+        # Replace with your logout command (e.g., for GNOME: gnome-session-quit --logout)
+       swaymsg exit 
+        ;;
+    Reboot) 
+        systemctl reboot --now 
+        ;;
+    Shutdown) 
+        systemctl shutdown -h --now
+        ;;
+esac
