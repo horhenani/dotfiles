@@ -1,0 +1,74 @@
+# set $mod Mod4
+set $mod Mod4
+# input type:keyboard {
+    # xkb_layout us
+    # xkb_options caps:super
+# }
+
+
+floating_modifier $mod normal
+font pango:JetbrainsMono Nerd Font, Awesome 9
+
+xwayland enable
+
+# set $gnome-schema org.gnome.desktop.interface
+# 
+#  exec_always {
+#      gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
+#      gsettings set $gnome-schema icon-theme 'Papirus-Dark'
+#      gsettings set $gnome-schema cursor-theme 'Adwaita'
+#      gsettings set $gnome-schema font-name 'Jetbrains Mono Nerd Font 10'
+#  }
+
+
+exec_always --no-startup-id swaybg -m fill -i ~/walls/catgirl.jpg
+#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+
+seat * hide_cursor when-typing enable
+
+#exec wl-paste -t text --watch clipman store --no-persist
+
+output DVI-D-1 pos 0 0 res 1280x1024
+### Output configuration
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+
+### Idle configuration
+#
+# Example configuration:
+#
+# exec swayidle -w \
+#          timeout 300 'swaylock -f -c 000000' \
+#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+#          before-sleep 'swaylock -f -c 000000'
+#
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+
+### Input configuration
+#
+# Example configuration:
+#
+#   input "2:14:SynPS/2_Synaptics_TouchPad" {
+#       dwt enabled
+#       tap enabled
+#       natural_scroll enabled
+#       middle_emulation enabled
+#   }
+#
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+
+
+# Status Bar:
+#bar {
+    
+    #swaybar_command waybar
+   
+#}
+# exec ~/.config/sway/autostart-sway.sh
+exec_always ~/.config/waybar/waybar.sh
+# exec wl-paste -t text --watch clipman store --no-persist
+
+include ~/.config/sway/config.d/*

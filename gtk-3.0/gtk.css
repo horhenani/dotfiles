@@ -1,0 +1,17 @@
+.titlebar, window {
+	border-radius: 0;
+	box-shadow: none;
+	visibility: hidden;
+}
+
+decoration {
+	border-radius: 0;
+	box-shadow: none;
+	visibility: hidden;
+}
+
+decoration:backdrop {
+	border-radius: 0;
+	box-shadow: none;
+	visibility: hidden;
+}
